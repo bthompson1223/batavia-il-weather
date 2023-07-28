@@ -90,7 +90,7 @@
       <div class="day-card">
         <img src="public/cloud.svg" alt="weather icon" class="weather-icon" />
         <div class="day-card-date">Sunday</div>
-        <div>32&deg;</div>
+        <div><span data-temp></span><span>&deg;</span></div>
       </div>
     </section>
 
@@ -901,16 +901,28 @@
               <div>0<span class="value-sub-info">in</span></div>
           </td>
         </tr>
-        <tr class="hour-row">
+      </tbody>
+    </table>
+
+    <template id="day-card-template">
+      <div class="day-card">
+        <img data-icon alt="weather icon" class="weather-icon" />
+        <div class="day-card-date" data-date></div>
+        <div><span data-temp><span>&deg;</span></div>
+      </div>
+    </template>
+
+    <template id="hour-row-template">
+       <tr class="hour-row">
           <td>
             <div class="info-group">
-              <div class="label">Thursday</div>
-              <div>3pm</div>
+              <div class="label" data-day></div>
+              <div data-time></div>
             </div>
           </td>
           <td>
             <img
-              src="public/cloud.svg"
+              data-icon
               alt="weather icon"
               class="weather-icon"
             />
@@ -918,28 +930,25 @@
           <td>
             <div class="info-group">
               <div class="label">Temp</div>
-              <div>31&deg;</div>
+              <div><span data-temp><span>&deg;</span></div>
           </td>
           <td>
             <div class="info-group">
               <div class="label">FL Temp</div>
-              <div>25&deg;</div>
+              <div><span data-fl-temp><span>&deg;</span></div>
           </td>
           <td>
             <div class="info-group">
               <div class="label">Wind</div>
-              <div>6<span class="value-sub-info">mph</span></div>
+              <div><span data-wind></span><span class="value-sub-info">mph</span></div>
           </td>
           <td>
             <div class="info-group">
               <div class="label">Precip</div>
-              <div>0<span class="value-sub-info">in</span></div>
+              <div><div><span data-precip></span><span class="value-sub-info">in</span></div>
           </td>
         </tr>
-      </tbody>
-    </table>
-
-    <template></template>
+    </template>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
